@@ -11314,58 +11314,59 @@ Elm.Components.ScrollableList.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var scrollButtons = A2($Html.div,
+   _U.list([$Html$Attributes.$class("css-scroll-buttons")]),
+   _U.list([A2($Html.button,
+           _U.list([$Html$Attributes.$class("css-button-up")]),
+           _U.list([]))
+           ,A2($Html.button,
+           _U.list([$Html$Attributes.$class("css-button-down")]),
+           _U.list([]))]));
+   var slots = A2($Html.ul,
+   _U.list([$Html$Attributes.$class("css-slots")]),
+   _U.list([A2($Html.li,
+           _U.list([$Html$Attributes.$class("css-slot")]),
+           _U.list([A2($Html.h3,
+                   _U.list([]),
+                   _U.list([$Html.text("Jorak Ulnnnn")]))
+                   ,A2($Html.h6,
+                   _U.list([]),
+                   _U.list([$Html.text("Homeworld: Korriban")]))]))
+           ,A2($Html.li,
+           _U.list([$Html$Attributes.$class("css-slot")]),
+           _U.list([A2($Html.h3,
+                   _U.list([]),
+                   _U.list([$Html.text("Skere Kaan")]))
+                   ,A2($Html.h6,
+                   _U.list([]),
+                   _U.list([$Html.text("Homeworld: Coruscant")]))]))
+           ,A2($Html.li,
+           _U.list([$Html$Attributes.$class("css-slot")]),
+           _U.list([A2($Html.h3,
+                   _U.list([]),
+                   _U.list([$Html.text("Skere Kaan")]))
+                   ,A2($Html.h6,
+                   _U.list([]),
+                   _U.list([$Html.text("Homeworld: Coruscant")]))]))
+           ,A2($Html.li,
+           _U.list([$Html$Attributes.$class("css-slot")]),
+           _U.list([A2($Html.h3,
+                   _U.list([]),
+                   _U.list([$Html.text("Skere Kaan")]))
+                   ,A2($Html.h6,
+                   _U.list([]),
+                   _U.list([$Html.text("Homeworld: Coruscant")]))]))
+           ,A2($Html.li,
+           _U.list([$Html$Attributes.$class("css-slot")]),
+           _U.list([A2($Html.h3,
+                   _U.list([]),
+                   _U.list([$Html.text("Jorak Uln")]))
+                   ,A2($Html.h6,
+                   _U.list([]),
+                   _U.list([$Html.text("Homeworld: Coruscant")]))]))]));
    var scrollableList = A2($Html.section,
    _U.list([$Html$Attributes.$class("css-scrollable-list")]),
-   _U.list([A2($Html.ul,
-           _U.list([$Html$Attributes.$class("css-slots")]),
-           _U.list([A2($Html.li,
-                   _U.list([$Html$Attributes.$class("css-slot")]),
-                   _U.list([A2($Html.h3,
-                           _U.list([]),
-                           _U.list([$Html.text("Jorak Uln")]))
-                           ,A2($Html.h6,
-                           _U.list([]),
-                           _U.list([$Html.text("Homeworld: Korriban")]))]))
-                   ,A2($Html.li,
-                   _U.list([$Html$Attributes.$class("css-slot")]),
-                   _U.list([A2($Html.h3,
-                           _U.list([]),
-                           _U.list([$Html.text("Skere Kaan")]))
-                           ,A2($Html.h6,
-                           _U.list([]),
-                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
-                   ,A2($Html.li,
-                   _U.list([$Html$Attributes.$class("css-slot")]),
-                   _U.list([A2($Html.h3,
-                           _U.list([]),
-                           _U.list([$Html.text("Skere Kaan")]))
-                           ,A2($Html.h6,
-                           _U.list([]),
-                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
-                   ,A2($Html.li,
-                   _U.list([$Html$Attributes.$class("css-slot")]),
-                   _U.list([A2($Html.h3,
-                           _U.list([]),
-                           _U.list([$Html.text("Skere Kaan")]))
-                           ,A2($Html.h6,
-                           _U.list([]),
-                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
-                   ,A2($Html.li,
-                   _U.list([$Html$Attributes.$class("css-slot")]),
-                   _U.list([A2($Html.h3,
-                           _U.list([]),
-                           _U.list([$Html.text("Jorak Uln")]))
-                           ,A2($Html.h6,
-                           _U.list([]),
-                           _U.list([$Html.text("Homeworld: Coruscant")]))]))]))
-           ,A2($Html.div,
-           _U.list([$Html$Attributes.$class("css-scroll-buttons")]),
-           _U.list([A2($Html.button,
-                   _U.list([$Html$Attributes.$class("css-button-up")]),
-                   _U.list([]))
-                   ,A2($Html.button,
-                   _U.list([$Html$Attributes.$class("css-button-down")]),
-                   _U.list([]))]))]));
+   _U.list([slots,scrollButtons]));
    return _elm.Components.ScrollableList.values = {_op: _op
                                                   ,scrollableList: scrollableList};
 };
