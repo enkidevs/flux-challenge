@@ -24,10 +24,14 @@ type alias Jedi =
 -- The full application state of our app.
 type alias Model =
   { darkJedis : List Jedi
-  , currentPlanet : Planet
+  , currentPlanet : Maybe Planet
   }
 
-model = 0
+model : Model
+model =
+    { darkJedis = [] 
+    , currentPlanet = Nothing
+    }
 
 
 view address model =
@@ -43,5 +47,5 @@ type Action = Increment | Decrement
 
 update action model =
   case action of
-    Increment -> model + 1
-    Decrement -> model - 1
+    Increment -> model
+    Decrement -> model
