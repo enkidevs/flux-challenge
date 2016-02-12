@@ -4,7 +4,7 @@ import String
 import ExternalCSS exposing (stylesheet)
 import Components.PlanetMonitor exposing (planetMonitor)
 import Components.ScrollableList exposing (scrollableList)
-
+import Types exposing (Model)
 main =
   div [ class "app-container" ]
     [ stylesheet "/styles.css"
@@ -13,27 +13,6 @@ main =
       , scrollableList
       ]
     ]
-
-type alias Planet =
-  { id : String
-  , name : String
-  }
-type alias JediRessource =
-  { id: String
-  , url : String
-  }
-type alias Jedi =
-  { id: String
-  , name : String
-  , master : JediRessource
-  , apprentice : JediRessource
-  }
-
--- The full application state of our app.
-type alias Model =
-  { darkJedis : List Jedi
-  , currentPlanet : Maybe Planet
-  }
 
 model : Model
 model =
