@@ -1,10 +1,12 @@
 import Html exposing (div, text, h1, h3, h6, section, ul, li, button)
 import Html.Attributes exposing (class)
 import String
+import ExternalCSS exposing (stylesheet)
 
 main =
   div [ class "app-container" ]
-    [ div [ class "css-root" ]
+    [ stylesheet "/styles.css"
+    , div [ class "css-root" ]
       [ h1 [ class "css-planet-monitor" ] [ text "Obi-Wan currently on Tatooine" ]
       , section [ class "css-scrollable-list" ]
         [ ul [ class "css-slots" ]
