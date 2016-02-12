@@ -1,0 +1,76 @@
+Elm.Main = Elm.Main || {};
+Elm.Main.make = function (_elm) {
+   "use strict";
+   _elm.Main = _elm.Main || {};
+   if (_elm.Main.values) return _elm.Main.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var main = A2($Html.div,
+   _U.list([$Html$Attributes.$class("app-container")]),
+   _U.list([A2($Html.div,
+   _U.list([$Html$Attributes.$class("css-root")]),
+   _U.list([A2($Html.h1,
+           _U.list([$Html$Attributes.$class("css-planet-monitor")]),
+           _U.list([$Html.text("Obi-Wan currently on Tatooine")]))
+           ,A2($Html.section,
+           _U.list([$Html$Attributes.$class("css-scrollable-list")]),
+           _U.list([A2($Html.ul,
+                   _U.list([$Html$Attributes.$class("css-slots")]),
+                   _U.list([A2($Html.li,
+                           _U.list([$Html$Attributes.$class("css-slot")]),
+                           _U.list([A2($Html.h3,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Jorak Uln")]))
+                                   ,A2($Html.h6,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Homeworld: Korriban")]))]))
+                           ,A2($Html.li,
+                           _U.list([$Html$Attributes.$class("css-slot")]),
+                           _U.list([A2($Html.h3,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Skere Kaan")]))
+                                   ,A2($Html.h6,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Homeworld: Coruscant")]))]))
+                           ,A2($Html.li,
+                           _U.list([$Html$Attributes.$class("css-slot")]),
+                           _U.list([A2($Html.h3,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Skere Kaan")]))
+                                   ,A2($Html.h6,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Homeworld: Coruscant")]))]))
+                           ,A2($Html.li,
+                           _U.list([$Html$Attributes.$class("css-slot")]),
+                           _U.list([A2($Html.h3,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Skere Kaan")]))
+                                   ,A2($Html.h6,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Homeworld: Coruscant")]))]))
+                           ,A2($Html.li,
+                           _U.list([$Html$Attributes.$class("css-slot")]),
+                           _U.list([A2($Html.h3,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Jorak Uln")]))
+                                   ,A2($Html.h6,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Homeworld: Coruscant")]))]))]))
+                   ,A2($Html.div,
+                   _U.list([$Html$Attributes.$class("css-scroll-buttons")]),
+                   _U.list([A2($Html.button,
+                           _U.list([$Html$Attributes.$class("css-button-up")]),
+                           _U.list([]))
+                           ,A2($Html.button,
+                           _U.list([$Html$Attributes.$class("css-button-down")]),
+                           _U.list([]))]))]))]))]));
+   return _elm.Main.values = {_op: _op,main: main};
+};

@@ -1,10 +1,41 @@
-import Html exposing (div, button, text)
-import Html.Events exposing (onClick)
-import StartApp.Simple as StartApp
-
+import Html exposing (div, text, h1, h3, h6, section, ul, li, button)
+import Html.Attributes exposing (class)
+import String
 
 main =
-  StartApp.start { model = model, view = view, update = update }
+  div [ class "app-container" ]
+    [ div [ class "css-root" ]
+      [ h1 [ class "css-planet-monitor" ] [ text "Obi-Wan currently on Tatooine" ]
+      , section [ class "css-scrollable-list" ]
+        [ ul [ class "css-slots" ]
+          [ li [ class "css-slot" ]
+            [ h3 [] [ text "Jorak Uln" ]
+            , h6 [] [ text "Homeworld: Korriban" ]
+            ]
+          , li [ class "css-slot" ]
+            [ h3 [] [ text "Skere Kaan" ]
+            , h6 [] [ text "Homeworld: Coruscant" ]
+            ]
+          , li [ class "css-slot" ]
+            [ h3 [] [ text "Skere Kaan" ]
+            , h6 [] [ text "Homeworld: Coruscant" ]
+            ]
+          , li [ class "css-slot" ]
+            [ h3 [] [ text "Skere Kaan" ]
+            , h6 [] [ text "Homeworld: Coruscant" ]
+            ]
+          , li [ class "css-slot" ]
+            [ h3 [] [ text "Jorak Uln" ]
+            , h6 [] [ text "Homeworld: Coruscant" ]
+            ]
+          ]
+        , div [ class "css-scroll-buttons" ]
+          [ button [ class "css-button-up" ] []
+          , button [ class "css-button-down" ] []
+          ]
+        ]
+      ]
+    ]
 
 type alias Planet =
   { id : String
@@ -20,7 +51,7 @@ type alias Jedi =
   , master : JediRessource
   , apprentice : JediRessource
   }
- 
+
 -- The full application state of our app.
 type alias Model =
   { darkJedis : List Jedi
@@ -29,7 +60,7 @@ type alias Model =
 
 model : Model
 model =
-    { darkJedis = [] 
+    { darkJedis = []
     , currentPlanet = Nothing
     }
 
