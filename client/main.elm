@@ -6,6 +6,26 @@ import StartApp.Simple as StartApp
 main =
   StartApp.start { model = model, view = view, update = update }
 
+type alias Planet =
+  { id : String
+  , name : String
+  }
+type alias JediRessource =
+  { id: String
+  , url : String
+  }
+type alias Jedi =
+  { id: String
+  , name : String
+  , master : JediRessource
+  , apprentice : JediRessource
+  }
+ 
+-- The full application state of our app.
+type alias Model =
+  { darkJedis : List Jedi
+  , currentPlanet : Planet
+  }
 
 model = 0
 
