@@ -11272,6 +11272,103 @@ Elm.Html.Attributes.make = function (_elm) {
                                         ,property: property
                                         ,attribute: attribute};
 };
+Elm.Components = Elm.Components || {};
+Elm.Components.PlanetMonitor = Elm.Components.PlanetMonitor || {};
+Elm.Components.PlanetMonitor.make = function (_elm) {
+   "use strict";
+   _elm.Components = _elm.Components || {};
+   _elm.Components.PlanetMonitor = _elm.Components.PlanetMonitor || {};
+   if (_elm.Components.PlanetMonitor.values)
+   return _elm.Components.PlanetMonitor.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var planetMonitor = A2($Html.h1,
+   _U.list([$Html$Attributes.$class("css-planet-monitor")]),
+   _U.list([$Html.text("Obi-Wan currently on Tatooine")]));
+   return _elm.Components.PlanetMonitor.values = {_op: _op
+                                                 ,planetMonitor: planetMonitor};
+};
+Elm.Components = Elm.Components || {};
+Elm.Components.ScrollableList = Elm.Components.ScrollableList || {};
+Elm.Components.ScrollableList.make = function (_elm) {
+   "use strict";
+   _elm.Components = _elm.Components || {};
+   _elm.Components.ScrollableList = _elm.Components.ScrollableList || {};
+   if (_elm.Components.ScrollableList.values)
+   return _elm.Components.ScrollableList.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var scrollableList = A2($Html.section,
+   _U.list([$Html$Attributes.$class("css-scrollable-list")]),
+   _U.list([A2($Html.ul,
+           _U.list([$Html$Attributes.$class("css-slots")]),
+           _U.list([A2($Html.li,
+                   _U.list([$Html$Attributes.$class("css-slot")]),
+                   _U.list([A2($Html.h3,
+                           _U.list([]),
+                           _U.list([$Html.text("Jorak Uln")]))
+                           ,A2($Html.h6,
+                           _U.list([]),
+                           _U.list([$Html.text("Homeworld: Korriban")]))]))
+                   ,A2($Html.li,
+                   _U.list([$Html$Attributes.$class("css-slot")]),
+                   _U.list([A2($Html.h3,
+                           _U.list([]),
+                           _U.list([$Html.text("Skere Kaan")]))
+                           ,A2($Html.h6,
+                           _U.list([]),
+                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
+                   ,A2($Html.li,
+                   _U.list([$Html$Attributes.$class("css-slot")]),
+                   _U.list([A2($Html.h3,
+                           _U.list([]),
+                           _U.list([$Html.text("Skere Kaan")]))
+                           ,A2($Html.h6,
+                           _U.list([]),
+                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
+                   ,A2($Html.li,
+                   _U.list([$Html$Attributes.$class("css-slot")]),
+                   _U.list([A2($Html.h3,
+                           _U.list([]),
+                           _U.list([$Html.text("Skere Kaan")]))
+                           ,A2($Html.h6,
+                           _U.list([]),
+                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
+                   ,A2($Html.li,
+                   _U.list([$Html$Attributes.$class("css-slot")]),
+                   _U.list([A2($Html.h3,
+                           _U.list([]),
+                           _U.list([$Html.text("Jorak Uln")]))
+                           ,A2($Html.h6,
+                           _U.list([]),
+                           _U.list([$Html.text("Homeworld: Coruscant")]))]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("css-scroll-buttons")]),
+           _U.list([A2($Html.button,
+                   _U.list([$Html$Attributes.$class("css-button-up")]),
+                   _U.list([]))
+                   ,A2($Html.button,
+                   _U.list([$Html$Attributes.$class("css-button-down")]),
+                   _U.list([]))]))]));
+   return _elm.Components.ScrollableList.values = {_op: _op
+                                                  ,scrollableList: scrollableList};
+};
 Elm.ExternalCSS = Elm.ExternalCSS || {};
 Elm.ExternalCSS.make = function (_elm) {
    "use strict";
@@ -11307,6 +11404,8 @@ Elm.Main.make = function (_elm) {
    if (_elm.Main.values) return _elm.Main.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
+   $Components$PlanetMonitor = Elm.Components.PlanetMonitor.make(_elm),
+   $Components$ScrollableList = Elm.Components.ScrollableList.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $ExternalCSS = Elm.ExternalCSS.make(_elm),
    $Html = Elm.Html.make(_elm),
@@ -11316,65 +11415,30 @@ Elm.Main.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var model = {darkJedis: _U.list([])
+               ,currentPlanet: $Maybe.Nothing};
+   var Model = F2(function (a,b) {
+      return {darkJedis: a,currentPlanet: b};
+   });
+   var Jedi = F4(function (a,b,c,d) {
+      return {id: a,name: b,master: c,apprentice: d};
+   });
+   var JediRessource = F2(function (a,b) {
+      return {id: a,url: b};
+   });
+   var Planet = F2(function (a,b) {    return {id: a,name: b};});
    var main = A2($Html.div,
    _U.list([$Html$Attributes.$class("app-container")]),
    _U.list([$ExternalCSS.stylesheet("/styles.css")
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("css-root")]),
-           _U.list([A2($Html.h1,
-                   _U.list([$Html$Attributes.$class("css-planet-monitor")]),
-                   _U.list([$Html.text("Obi-Wan currently on Tatooine")]))
-                   ,A2($Html.section,
-                   _U.list([$Html$Attributes.$class("css-scrollable-list")]),
-                   _U.list([A2($Html.ul,
-                           _U.list([$Html$Attributes.$class("css-slots")]),
-                           _U.list([A2($Html.li,
-                                   _U.list([$Html$Attributes.$class("css-slot")]),
-                                   _U.list([A2($Html.h3,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Jorak Uln")]))
-                                           ,A2($Html.h6,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Homeworld: Korriban")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([$Html$Attributes.$class("css-slot")]),
-                                   _U.list([A2($Html.h3,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Skere Kaan")]))
-                                           ,A2($Html.h6,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([$Html$Attributes.$class("css-slot")]),
-                                   _U.list([A2($Html.h3,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Skere Kaan")]))
-                                           ,A2($Html.h6,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([$Html$Attributes.$class("css-slot")]),
-                                   _U.list([A2($Html.h3,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Skere Kaan")]))
-                                           ,A2($Html.h6,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Homeworld: Coruscant")]))]))
-                                   ,A2($Html.li,
-                                   _U.list([$Html$Attributes.$class("css-slot")]),
-                                   _U.list([A2($Html.h3,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Jorak Uln")]))
-                                           ,A2($Html.h6,
-                                           _U.list([]),
-                                           _U.list([$Html.text("Homeworld: Coruscant")]))]))]))
-                           ,A2($Html.div,
-                           _U.list([$Html$Attributes.$class("css-scroll-buttons")]),
-                           _U.list([A2($Html.button,
-                                   _U.list([$Html$Attributes.$class("css-button-up")]),
-                                   _U.list([]))
-                                   ,A2($Html.button,
-                                   _U.list([$Html$Attributes.$class("css-button-down")]),
-                                   _U.list([]))]))]))]))]));
-   return _elm.Main.values = {_op: _op,main: main};
+           _U.list([$Components$PlanetMonitor.planetMonitor
+                   ,$Components$ScrollableList.scrollableList]))]));
+   return _elm.Main.values = {_op: _op
+                             ,main: main
+                             ,Planet: Planet
+                             ,JediRessource: JediRessource
+                             ,Jedi: Jedi
+                             ,Model: Model
+                             ,model: model};
 };
